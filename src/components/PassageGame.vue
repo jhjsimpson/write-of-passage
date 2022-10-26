@@ -1,10 +1,6 @@
 <template>
   <div id="main">
-    <table>
-      <tr>
-        <h1>{{ msg }}</h1>
-      </tr>
-    </table>
+    <h2>{{ msg }}</h2>
   </div>
 </template>
 
