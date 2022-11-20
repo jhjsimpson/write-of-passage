@@ -1,19 +1,20 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <PassageGame msg="TEST"/>
-  <PassageGameFooter />
+  <PassageGameOutput msg="THIS IS SOME TEXT TEXT TO FILL THE DIV BASED 
+  ON SCREEN SIZE OR SOMETHING. PLEASE KEEP TYPING FOR YOUR CONVENIENCE."/>
+  <PassageGameInput />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import PassageGame from "./components/PassageGame.vue";
-import PassageGameFooter from "./components/PassageGameFooter.vue";
+import PassageGameOutput from "./components/PassageGameOutput.vue";
+import PassageGameInput from "./components/PassageGameInput.vue";
 import "@fontsource/press-start-2p";
 
 @Options({
   components: {
-    PassageGame,
-    PassageGameFooter,
+    PassageGameOutput,
+    PassageGameInput,
   },
 })
 export default class App extends Vue {}
@@ -34,7 +35,8 @@ body {
 }
 
 body::after {
-  position: fixed;
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -42,7 +44,7 @@ body::after {
   background: repeating-linear-gradient(
     0deg,
     rgba(255, 255, 255, 0),
-    rgba(0, 0, 0, 0.25) 2px,
+    rgba(0, 0, 0, 0.75) 2px,
     transparent 1px,
     transparent 2px
   );
@@ -58,22 +60,37 @@ body::after {
   width: 100vw;
   display: inline-block;
 }
-#main {
+#output {
   position: fixed;
   width: 100vw;
-  height: 90vh;
+  height: 95vh;
   padding: 2rem;
 }
-#footer {
-  position: fixed;
+#input {
+  position: absolute;
   width: 100vw;
-  height: 10vh;
+  height: 5vh;
   bottom: 0;
+  margin: auto;
   padding: 2rem;
 }
 h1,
-h2,
-h3 {
+h2 {
   margin: 0;
+}
+#inputBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  color: rgb(15, 230, 15);
+}
+#playerInput {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+  font: 2em "Press Start 2p", monospace;
 }
 </style>

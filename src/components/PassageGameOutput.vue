@@ -1,5 +1,5 @@
 <template>
-  <div id="main">
+  <div id="output">
     <h2>{{ msg }}</h2>
   </div>
 </template>
@@ -12,7 +12,7 @@ import { Options, Vue } from "vue-class-component";
     msg: String,
   },
 })
-export default class PassageGame extends Vue {
+export default class PassageGameOutput extends Vue {
   msg!: string;
 }
 </script>
