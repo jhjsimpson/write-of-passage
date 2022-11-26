@@ -21,7 +21,6 @@ export default class App extends Vue {}
 </script>
 
 <style>
-html,
 body {
   background-color: black;
   background-image: radial-gradient(rgba(0, 150, 0, 0.75), black 120%);
@@ -31,7 +30,6 @@ body {
   color: rgb(15, 230, 15);
   font: 1rem "Press Start 2p", monospace;
   text-shadow: 0 0 5px #182e15;
-  pointer-events: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -48,7 +46,7 @@ body::after {
   background: repeating-linear-gradient(
     0deg,
     rgba(255, 255, 255, 0),
-    rgba(0, 0, 0, 0.75) 2px,
+    rgba(0, 0, 0, 0.5) 2px,
     transparent 1px,
     transparent 2px
   );
@@ -83,7 +81,6 @@ body::after {
   height: 10vh;
   bottom: 0;
   margin: auto;
-
   box-sizing: border-box;
 }
 h1,
@@ -96,15 +93,22 @@ h2 {
   left: 0;
   margin: auto;
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0);
-  z-index: 1;
-  color: rgb(15, 230, 15);
   box-sizing: border-box;
 }
 #playerInput {
   border: 0;
   background-color: rgba(0, 0, 0, 0);
-  color: rgb(15, 230, 15);
   font: 1rem "Press Start 2p", monospace;
+  outline: none;
+  color: rgb(15, 230, 15);
+  box-sizing: border-box;
+  pointer-events: all;
+}
+
+::placeholder {
+  color: rgb(15, 230, 15);
+  opacity: 1;
+  outline: none;
+  pointer-events: all;
 }
 </style>
