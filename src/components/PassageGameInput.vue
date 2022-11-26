@@ -2,7 +2,7 @@
   <div id="input">
     <!-- <h2 id="playerInput">> THIS IS SOME TEXT</h2> -->
     <div id="inputBox">
-      <input id="playerInput" type="text" placeholder="Text" />
+      <input id="playerInput" type="text" placeholder="TEXT" />
     </div>
   </div>
 </template>
