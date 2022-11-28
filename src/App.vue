@@ -21,19 +21,24 @@ export default class App extends Vue {}
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+  pointer-events: all;
+  margin: 0;
+}
+
 body {
   background-color: black;
-  background-image: radial-gradient(rgba(0, 150, 0, 0.75), black 120%);
+  background-image: radial-gradient(rgba(0, 150, 55, 0.5), black 200%);
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   color: rgb(15, 230, 15);
   font: 1rem "Press Start 2p", monospace;
   text-shadow: 0 0 5px #182e15;
-  margin: 0;
   padding: 0;
-  box-sizing: border-box;
   line-height: 1.2;
+  pointer-events: none;
 }
 
 body::after {
@@ -50,8 +55,7 @@ body::after {
     transparent 1px,
     transparent 2px
   );
-  margin: 0;
-  box-sizing: border-box;
+  pointer-events: none;
 }
 
 ::selection {
@@ -62,9 +66,7 @@ body::after {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 #output {
   position: fixed;
@@ -73,7 +75,6 @@ body::after {
   top: 0;
   margin: auto;
   padding: 2rem;
-  box-sizing: border-box;
 }
 #input {
   position: fixed;
@@ -81,34 +82,23 @@ body::after {
   height: 10vh;
   bottom: 0;
   margin: auto;
-  box-sizing: border-box;
 }
-h1,
-h2 {
-  margin: 0;
-}
-#inputBox {
+
+#commandLine {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  padding: 2rem;
-  box-sizing: border-box;
-}
-#playerInput {
+  bottom: 2rem;
+  width: 100vw;
   border: 0;
   background-color: rgba(0, 0, 0, 0);
   font: 1rem "Press Start 2p", monospace;
   outline: none;
   color: rgb(15, 230, 15);
-  box-sizing: border-box;
-  pointer-events: all;
+  padding: 0 2rem;
 }
 
 ::placeholder {
   color: rgb(15, 230, 15);
   opacity: 1;
   outline: none;
-  pointer-events: all;
 }
 </style>

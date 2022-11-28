@@ -1,9 +1,14 @@
 <template>
   <div id="input">
-    <!-- <h2 id="playerInput">> THIS IS SOME TEXT</h2> -->
-    <div id="inputBox">
-      <input id="playerInput" type="text" placeholder="TEXT" />
-    </div>
+    <input
+      id="commandLine"
+      type="text"
+      placeholder=">"
+      onkeyup="this.value = this.value.toUpperCase();"
+      autocomplete="off"
+      spellcheck="false"
+      maxlength="100"
+    />
   </div>
 </template>
 
