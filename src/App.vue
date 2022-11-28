@@ -29,7 +29,7 @@ export default class App extends Vue {}
 
 body {
   background-color: black;
-  background-image: radial-gradient(rgba(0, 150, 55, 0.5), black 200%);
+  background-image: radial-gradient(rgba(0, 150, 12, 0.5), black 200%);
   width: 100vw;
   height: 100vh;
   overflow: hidden;
