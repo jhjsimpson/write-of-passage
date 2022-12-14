@@ -3,11 +3,13 @@
     <input
       id="commandLine"
       type="text"
-      placeholder=">"
+      placeholder=""
       onkeyup="this.value = this.value.toUpperCase();"
       autocomplete="off"
       spellcheck="false"
       maxlength="100"
+      ref="cmdLine"
+      v-on:keypress.enter="submitCommandLine"
     />
   </div>
 </template>
@@ -16,6 +18,8 @@
 import { Vue } from "vue-class-component";
 
 export default class PassageGameInput extends Vue {
-  msg!: string;
+  mounted() {
+    this.$refs.cmdLine.focus();
+  }
 }
 </script>

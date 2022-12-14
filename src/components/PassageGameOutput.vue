@@ -11,6 +11,9 @@ import { Options, Vue } from "vue-class-component";
   props: {
     msg: String,
   },
+  data() {
+    let commandList = "";
+  },
 })
 export default class PassageGameOutput extends Vue {
   msg!: string;

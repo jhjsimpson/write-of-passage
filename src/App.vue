@@ -1,15 +1,26 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <PassageGameOutput msg="THIS IS SOME TEXT TEXT TO FILL THE DIV BASED 
-  ON SCREEN SIZE OR SOMETHING. PLEASE KEEP TYPING FOR YOUR CONVENIENCE."/>
+  <PassageGameOutput />
   <PassageGameInput />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import vuex from "vuex";
 import PassageGameOutput from "./components/PassageGameOutput.vue";
 import PassageGameInput from "./components/PassageGameInput.vue";
 import "@fontsource/press-start-2p";
+
+const store = new vuex.Store({
+  state: {
+    outputDisplay: Array<string>(),
+  },
+  mutations: {
+    saveCommandLineSubmission(state) {
+      state.outputDisplay.push("testItem");
+    },
+  },
+});
 
 @Options({
   components: {
@@ -23,7 +34,7 @@ export default class App extends Vue {}
 <style>
 * {
   box-sizing: border-box;
-  pointer-events: all;
+  pointer-events: none;
   margin: 0;
 }
 
@@ -38,7 +49,6 @@ body {
   text-shadow: 0 0 5px #182e15;
   padding: 0;
   line-height: 1.2;
-  pointer-events: none;
 }
 
 body::after {
@@ -55,11 +65,10 @@ body::after {
     transparent 1px,
     transparent 2px
   );
-  pointer-events: none;
 }
 
 ::selection {
-  background: rgba(0, 0, 0, 0.373);
+  background: rgb(0, 0, 0);
   text-shadow: none;
 }
 #app {
@@ -94,6 +103,7 @@ body::after {
   outline: none;
   color: rgb(15, 230, 15);
   padding: 0 2rem;
+  pointer-events: auto;
 }
 
 ::placeholder {
